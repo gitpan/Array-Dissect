@@ -1,5 +1,11 @@
 Revision history for Perl extension Array::Dissect.
 
+1.01  Thu May 15 13:39:36 2003
+        - cleaned up pod and export
+        - added reform function
+        - functions invoked as such rather than class methods
+        - improved argument checking
+
 1.00  Fri Dec 14 15:42:22 2001
       	- original version
 

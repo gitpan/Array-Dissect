@@ -1,8 +1,8 @@
 package Array::Dissect;
 
+use 5.006;
+use warnings;
 use strict;
-use vars qw($VERSION @ISA @EXPORT @EXPORT_OK);
-
 use Carp;
 
 require Exporter;
@@ -25,7 +25,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 # Preloaded methods go here.
 sub reform {
@@ -67,7 +67,7 @@ sub _validate_params {
     Carp::croak( "'$size' is an invalid array size" );
   }
 
-  # If only one argument remains, check to see if it is an arrayref, otherwise, reate a reference to all remaining args
+  # If only one argument remains, check to see if it is an arrayref, otherwise, create a reference to all remaining args
   my $r_list;
   if( ($#_ == 0) &&
       (ref($_[0]) eq 'ARRAY') ) {
@@ -121,21 +121,22 @@ This is intended as a much-improved replacement for Array::Reform.
 Given the current maintainer's apparent lack of interest in keeping
 this module up to date, it unfortunately, for now, exists separately.
 
-Both these methods are designed to reformat a list into a list of
-lists. It is often used for formatting data into HTML tables, amongst
-other things.
+The module is designed to reformat a list into a list of lists. It is
+often used for formatting data into HTML tables, amongst other things.
 
-The key difference between the two methods is that C<dissect()> takes
-elements from the start of the list provided and pushes them onto each
-of the sub-arrays sequentially, rather than simply dividing the list
-into discrete chunks.
+Two methods are available for this purpose, C<reform()> and
+C<dissect()>. The key difference between the two methods is that
+C<dissect()> takes elements from the start of the list provided and
+pushes them onto each of the sub-arrays sequentially, rather than
+simply dividing the list into discrete chunks.
 As a result C<dissect()> returns a list of lists where the first
 element of each sublist will be one of the first elements of the
 source list, and the last element will be one of the last.
 This behavior is much more useful when the input list is sorted.
 
 With both methods the array to be reformed can be passed as an array
-or an array reference.
+or an array reference, and the list or lists will be returned as a
+reference in a scalar context.
 
 =head1 AUTHOR
 

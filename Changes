@@ -1,5 +1,8 @@
 Revision history for Perl extension Array::Dissect.
 
+1.03  Mon Oct 27 18:53:06 2003
+        - documentation tweaks
+
 1.02  Wed Aug 20 17:38:56 2003
 	- fixed integer-matching regex
 

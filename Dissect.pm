@@ -25,7 +25,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 # Preloaded methods go here.
 sub reform {
@@ -61,7 +61,7 @@ sub _validate_params {
 
   # First argument is size. check it is a valid positive integer.
   my $size = shift;
-  if( $size !~ /^+?\d+$/ ) {
+  if( $size !~ /^\+?\d+$/ ) {
     Carp::croak( "Size '$size' is not a valid positive integer" );
   } elsif( $size == 0 ) {
     Carp::croak( "'$size' is an invalid array size" );
